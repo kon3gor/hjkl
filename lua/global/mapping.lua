@@ -22,10 +22,11 @@ nnoremap('<C-u>', '<C-u>zz')
 -- Leader remaps
 nnoremap('<leader>o', 'o<ESC>0')
 nnoremap('<leader>O', 'O<ESC>0')
-xnoremap('<leader>p', '\"_dp')
-nnoremap('<leader>t', ':NvimTreeToggle<CR>', { silent = true})
+xnoremap('<leader>p', '\"_dP')
+nnoremap('<leader>t', ':NvimTreeToggle<CR>', { silent = true })
+nnoremap('<leader>l', ':NvimTreeFindFile<CR>', { silent = true })
 
 -- Idk which remaps
 inoremap('jk', '<ESC>')
-nnoremap('ch', ':nohl<CR>', { silent = true})
+nnoremap('ch', ':nohl<CR>', { silent = true })
 nnoremap('$', 'g_')

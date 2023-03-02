@@ -42,7 +42,7 @@ local lsp_flags = {
 vim.g.coq_settings = {
 	keymap = {
 		recommended = true,
-		manual_complete = "<c-l>",
+		manual_complete = "<C-l>",
 	}
 }
 local coq = require("coq")

@@ -35,6 +35,10 @@ return require('packer').startup(function(use)
 
 	--color scehmes
 	use "savq/melange"
+	use({
+		'rose-pine/neovim',
+		as = 'rose-pine',
+	})
 
 	--stuff
 	use "ThePrimeagen/vim-be-good"
