@@ -6,10 +6,7 @@ return require('packer').startup(function(use)
 		requires = { 'kyazdani42/nvim-web-devicons' }
 	}
 
-	use {
-		'gelguy/wilder.nvim',
-		config = function() modues = { ':', '/', '?' } end,
-	}
+	use 'gelguy/wilder.nvim'
 
 	use {
 		'nvim-treesitter/nvim-treesitter',
@@ -18,33 +15,43 @@ return require('packer').startup(function(use)
 
 	use 'nvim-treesitter/nvim-treesitter-context'
 
+	--- Telescope
 	use {
 		'nvim-telescope/telescope.nvim',
 		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
+	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+	use "ahmedkhalf/project.nvim"
 
-	--LSP
+	-- LSP
 	use "williamboman/mason.nvim"
 	use "williamboman/mason-lspconfig.nvim"
 	use "neovim/nvim-lspconfig"
+	use "dart-lang/dart-vim-plugin"
 
-	--cmp
-	use { "ms-jpq/coq_nvim", branch = "coq" }
-	use { "ms-jpq/coq.artifacts", branch = "artifacts" }
-	use { "ms-jpq/coq.thirdparty", branch = "3p" }
+	-- Completion
+	use "hrsh7th/nvim-cmp"
+	use "hrsh7th/cmp-nvim-lsp"
+	use "hrsh7th/cmp-buffer"
+	use "hrsh7th/cmp-path"
 
-	--color scehmes
+	-- Snippets
+	use "L3MON4D3/LuaSnip"
+	use "saadparwaiz1/cmp_luasnip"
+
+	-- color scehmes
 	use "savq/melange"
-	use({
-		'rose-pine/neovim',
-		as = 'rose-pine',
-	})
 
 	--stuff
 	use "ThePrimeagen/vim-be-good"
-	use "dart-lang/dart-vim-plugin"
 	use {
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	}
+	use {
+		'glepnir/dashboard-nvim',
+		event = 'VimEnter',
+		config = function() require("dash") end,
+		requires = { 'nvim-tree/nvim-web-devicons' }
 	}
 end)

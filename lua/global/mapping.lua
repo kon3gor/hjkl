@@ -25,6 +25,7 @@ nnoremap('<leader>O', 'O<ESC>0')
 xnoremap('<leader>p', '\"_dP')
 nnoremap('<leader>t', ':NvimTreeToggle<CR>', { silent = true })
 nnoremap('<leader>l', ':NvimTreeFindFile<CR>', { silent = true })
+nnoremap('<leader>g', ':Telescope live_grep<CR><ESC>', { silent = true })
 
 -- Idk which remaps
 inoremap('jk', '<ESC>')

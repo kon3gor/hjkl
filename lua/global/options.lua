@@ -1,5 +1,6 @@
 -- Globals
 vim.g.mapleader = " "
+vim.g.loaded_netrwPlugin = 0
 
 -- Options
 local opts = vim.opt
