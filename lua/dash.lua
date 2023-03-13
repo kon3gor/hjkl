@@ -2,7 +2,7 @@ require('dashboard').setup {
 	theme = 'hyper',
 	config = {
 		week_header = {
-			enable = true,
+			enable = true
 		},
 		shortcut = {
 			{ desc = ' Update',

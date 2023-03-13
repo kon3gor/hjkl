@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/kon3gor/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["ascii.nvim"] = {
+    loaded = true,
+    path = "/Users/kon3gor/.local/share/nvim/site/pack/packer/start/ascii.nvim",
+    url = "https://github.com/MaximilianLloyd/ascii.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/kon3gor/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -104,14 +109,6 @@ _G.packer_plugins = {
     path = "/Users/kon3gor/.local/share/nvim/site/pack/packer/start/dart-vim-plugin",
     url = "https://github.com/dart-lang/dart-vim-plugin"
   },
-  ["dashboard-nvim"] = {
-    config = { "\27LJ\2\n$\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\tdash\frequire\0" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/kon3gor/.local/share/nvim/site/pack/packer/opt/dashboard-nvim",
-    url = "https://github.com/glepnir/dashboard-nvim"
-  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/kon3gor/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -131,6 +128,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/kon3gor/.local/share/nvim/site/pack/packer/start/melange",
     url = "https://github.com/savq/melange"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/kon3gor/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -177,6 +179,12 @@ _G.packer_plugins = {
     path = "/Users/kon3gor/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
+  ["startup.nvim"] = {
+    config = { "\27LJ\2\nK\0\0\5\0\4\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0A\0\0\1K\0\1\0\14mystartup\nsetup\fstartup\frequire\0" },
+    loaded = true,
+    path = "/Users/kon3gor/.local/share/nvim/site/pack/packer/start/startup.nvim",
+    url = "https://github.com/startup-nvim/startup.nvim"
+  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/Users/kon3gor/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
@@ -200,13 +208,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
-vim.cmd [[augroup packer_load_aucmds]]
-vim.cmd [[au!]]
-  -- Event lazy-loads
-time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'dashboard-nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
-time([[Defining lazy-load event autocommands]], false)
-vim.cmd("augroup END")
+-- Config for: startup.nvim
+time([[Config for startup.nvim]], true)
+try_loadstring("\27LJ\2\nK\0\0\5\0\4\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0A\0\0\1K\0\1\0\14mystartup\nsetup\fstartup\frequire\0", "config", "startup.nvim")
+time([[Config for startup.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

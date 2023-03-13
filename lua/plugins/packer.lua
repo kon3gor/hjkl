@@ -40,7 +40,9 @@ return require('packer').startup(function(use)
 	use "saadparwaiz1/cmp_luasnip"
 
 	-- color scehmes
-	use "savq/melange"
+	use {
+		"savq/melange",
+	}
 
 	--stuff
 	use "ThePrimeagen/vim-be-good"
@@ -48,10 +50,21 @@ return require('packer').startup(function(use)
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
-	use {
+	--[[ use {
 		'glepnir/dashboard-nvim',
 		event = 'VimEnter',
 		config = function() require("dash") end,
 		requires = { 'nvim-tree/nvim-web-devicons' }
+	}]] --
+
+	use {
+		"startup-nvim/startup.nvim",
+		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+		config = function()
+			require("startup").setup ( require("mystartup") )
+		end
 	}
+	use({ "MaximilianLloyd/ascii.nvim", requires = {
+		"MunifTanjim/nui.nvim"
+	} })
 end)
