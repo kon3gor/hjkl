@@ -50,21 +50,22 @@ return require('packer').startup(function(use)
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
-	--[[ use {
-		'glepnir/dashboard-nvim',
-		event = 'VimEnter',
-		config = function() require("dash") end,
-		requires = { 'nvim-tree/nvim-web-devicons' }
-	}]] --
 
 	use {
 		"startup-nvim/startup.nvim",
 		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 		config = function()
-			require("startup").setup ( require("mystartup") )
+			require("startup").setup(require("mystartup"))
 		end
 	}
-	use({ "MaximilianLloyd/ascii.nvim", requires = {
-		"MunifTanjim/nui.nvim"
-	} })
+	use({
+		"MaximilianLloyd/ascii.nvim",
+		requires = {
+			"MunifTanjim/nui.nvim"
+		}
+	})
+
+	use "onsails/lspkind.nvim"
+	use "ThePrimeagen/harpoon"
+	use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 end)

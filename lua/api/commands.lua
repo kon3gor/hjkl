@@ -23,9 +23,25 @@ local function availableEmulators()
 	return lines
 end
 
-user_command("StartEmulator", startEmulator, { nargs = 1,
+user_command("StartEmulator", startEmulator, {
+	nargs = 1,
 	complete = function(_, _, _)
 		return availableEmulators()
 	end,
 })
 --- user_command("Logcat", '!adb logcat', {})
+
+-- Harpoon mappings
+local harpoon_ui = require("harpoon.ui")
+
+user_command('HarpoonQuickMenu', function()
+	harpoon_ui.toggle_quick_menu()
+end, {})
+
+user_command('HarpoonNext', function()
+	harpoon_ui.nav_next()
+end, {})
+
+user_command('HarpoonPrev', function()
+	harpoon_ui.nav_prev()
+end, {})
