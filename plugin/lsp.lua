@@ -60,13 +60,3 @@ require("lspconfig")["dartls"].setup {
 	flags = lsp_flags,
 	capabilities = capabilities,
 }
-
-require("lspconfig")["clangd"].setup {
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-	root_dir = function()
-		return vim.loop.cwd()
-	end
-
-}
