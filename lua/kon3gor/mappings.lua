@@ -16,6 +16,8 @@ remap.xnoremap('<leader>p', '\"_dP')
 remap.nnoremap('<leader>t', ':Sex %:p:h<CR>', silent)
 remap.nnoremap('<leader>oo', ':lua require("custom.openlink").open_exact()<CR><ESC>', silent)
 remap.nnoremap('<leader>ol', ':lua require("custom.openlink").open_line()<CR><ESC>', silent)
+remap.nnoremap('<leader>cn', ':cn<CR>', silent)
+remap.nnoremap('<leader>cp', ':cp<CR>', silent)
 
 -- Idk which remaps
 remap.inoremap('jk', '<ESC>')
