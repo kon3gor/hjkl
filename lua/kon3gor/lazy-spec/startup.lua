@@ -1,6 +1,5 @@
 local pockemons = require("pockemons")
 
-
 local settings = {
 	-- every line should be same width without escaped \
 	header = {
@@ -39,7 +38,7 @@ local settings = {
 		fold_section = false,
 		title = "Footer",
 		margin = 5,
-		content = { "Lorem ipsum dolor sit amet" },
+		content = { "Fork me daddy" },
 		highlight = "Number",
 		default_color = "",
 		oldfiles_amount = 0,
@@ -65,4 +64,14 @@ local settings = {
 	},
 	parts = { "header", "body", "footer" },
 }
-return settings
+local function configure()
+	local startup = require("startup")
+	startup.setup(settings)
+end
+
+local spec = {
+	'startup-nvim/startup.nvim',
+	config = configure
+}
+
+return spec
