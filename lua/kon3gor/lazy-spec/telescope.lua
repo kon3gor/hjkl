@@ -1,6 +1,5 @@
 local extensions = {
 	"fzf",
-	"projects",
 }
 
 local config = {
