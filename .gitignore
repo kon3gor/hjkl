@@ -1,1 +1,4 @@
 .DS_Store
+lua/extensions/*
+!lua/extensions/init.lua
+!lua/extensions/README.md
