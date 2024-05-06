@@ -1,4 +1,5 @@
 local remap = require("kon3gor.tools.remap")
+local extensions = require("extensions")
 
 local on_attach = function(client, bufnr)
 	-- Enable completion triggered by <c-x><c-o>
@@ -97,6 +98,10 @@ local function configure()
 			end
 		},
 	})
+
+	if extensions.lsp ~= nil then
+		require(extensions.lsp)
+	end
 end
 
 local spec = {

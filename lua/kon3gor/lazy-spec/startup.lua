@@ -24,7 +24,6 @@ local settings = {
 		content = {
 			{ " Find File", "Telescope find_files", "f" },
 			{ " Find Word", "Telescope live_grep", "g" },
-			{ " Projects", "Telescope projects", "p" },
 			{ " New File", "lua require'startup'.new_file()", "n" },
 		},
 		highlight = "String",
