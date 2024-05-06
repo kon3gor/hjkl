@@ -99,9 +99,7 @@ local function configure()
 		},
 	})
 
-	if extensions.lsp ~= nil then
-		require(extensions.lsp)
-	end
+	extensions.load("lsp")
 end
 
 local spec = {
