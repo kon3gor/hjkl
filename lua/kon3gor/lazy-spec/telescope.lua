@@ -1,4 +1,6 @@
-local extensions = {
+local extensions = require("extensions")
+
+local telescope_extensions = {
 	"fzf",
 }
 
@@ -52,9 +54,11 @@ local function configure()
 	remap.nnoremap('<C-p>', ':Telescope projects<CR><ESC>', silent)
 	remap.nnoremap('<C-b>', ':Telescope buffers<CR><ESC>', silent)
 
-	for i = 1, #extensions do
-		telescope.load_extension(extensions[i])
+	for i = 1, #telescope_extensions do
+		telescope.load_extension(telescope_extensions[i])
 	end
+
+	extensions.load("telescope")
 end
 
 local spec = {
@@ -66,7 +70,7 @@ local spec = {
 			build = 'make'
 		}
 	},
-	config = configure(),
+	config = configure
 }
 
 return spec

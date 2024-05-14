@@ -37,7 +37,7 @@ local function configure()
 	local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 	local opts = { noremap = true, silent = true }
-	remap.nnoremap('<space>e', vim.diagnostic.open_float, opts)
+	remap.nnoremap('<space>of', vim.diagnostic.open_float, opts)
 	remap.nnoremap('[d', vim.diagnostic.goto_prev, opts)
 	remap.nnoremap(']d', vim.diagnostic.goto_next, opts)
 	remap.nnoremap('<space>q', vim.diagnostic.setloclist, opts)
@@ -99,7 +99,11 @@ local function configure()
 		},
 	})
 
-	extensions.load("lsp")
+	extensions.load("lsp", {
+		on_attach = on_attach,
+		capabilities = capabilities,
+		flags = lsp_flags,
+	})
 end
 
 local spec = {

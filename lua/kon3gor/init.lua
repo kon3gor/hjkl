@@ -1,3 +1,5 @@
+local extensions = require("extensions")
+
 local mod = require("kon3gor.tools.mod")
 
 local prefix = "kon3gor"
@@ -9,3 +11,5 @@ local modules = {
 }
 
 mod.require(prefix, modules)
+
+extensions.load("main")

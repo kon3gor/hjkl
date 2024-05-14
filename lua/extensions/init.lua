@@ -1,7 +1,12 @@
 local E = {}
 
-function E.load(module)
-	pcall(require, "extensions." .. module)
+---@param name string
+---@param settings table?
+function E.load(name, settings)
+	local ok, extension = pcall(require, "extensions." .. name)
+	if ok then
+		extension.setup(settings or {})
+	end
 end
 
 return E
