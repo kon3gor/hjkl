@@ -58,6 +58,12 @@ local function configure()
 		telescope.load_extension(telescope_extensions[i])
 	end
 
+	vim.opt.foldmethod = "expr"
+	vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+	vim.opt.foldenable = true
+	vim.opt.foldminlines = 100
+	vim.opt.foldnestmax = 1
+
 	extensions.load("telescope")
 end
 
