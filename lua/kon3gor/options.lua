@@ -8,6 +8,7 @@ opts.tabstop = 4
 opts.clipboard = "unnamedplus"
 opts.wrap = false
 opts.swapfile = false
+opts.expandtab = true
 -- Used for colorscheme and for nvim tree, idk y 
 opts.termguicolors = true
 
