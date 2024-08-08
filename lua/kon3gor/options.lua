@@ -9,7 +9,7 @@ opts.clipboard = "unnamedplus"
 opts.wrap = false
 opts.swapfile = false
 opts.expandtab = true
--- Used for colorscheme and for nvim tree, idk y 
+opts.spell = true
+opts.spelllang = "en_us"
+-- Used for colorscheme and for nvim tree, idk y
 opts.termguicolors = true
-
--- netrw stuff
